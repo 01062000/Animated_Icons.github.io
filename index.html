@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+            <title>animated icons</title>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
+    </head>
+    <style>
+        body{padding: 0;margin: 0;width:100%;
+            height: 100vh;}
+        div{
+           display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; 
+        }
+        ul li{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 2px solid darkblue;
+            position: relative;
+        }
+        
+        ul li i{
+            color:darkblue;
+        }
+    
+        ul {
+            display: flex;
+        }
+        
+        ul li:before{
+            content: "";
+            width: inherit;
+            height: inherit;
+            background-color: darkblue;
+            border-radius: 50%;
+            /*border: 2px solid cyan;*/
+            transition: all .2s linear;
+            opacity: 0;
+            position: absolute;
+            z-index: -1;
+        }
+        ul li:hover:before{
+            transform: scale(0.8);
+            opacity: 1;
+        }
+        ul li:hover i{
+            color: whitesmoke;
+        }
+        ul li:after{
+            content: "";
+            width: inherit;
+            height: inherit;
+            /*background-color: darkblue;*/
+            border: 5px dashed darkblue;
+            border-radius: 50%;
+            /*border: 2px solid cyan;*/
+            transition: all .2s linear;
+            opacity: 0;
+            position: absolute;
+            /*z-index: -1;*/
+        }
+        ul li:hover:after{
+            animation: rotates 5s ease-in-out infinite;
+            opacity: 1;
+        }
+        @keyframes rotates{
+            0%{transform: scale(0.9) rotate(0deg);}
+            100%{transform: scale(0.9) rotate(360deg);}
+        }
+    </style>
+    
+    <body>
+        <div>
+        <ul>
+            <li><i class="fas fa-5x fa-heart"></i></li>
+            <li><i class="fas fa-5x fa-globe"></i></li>
+            <li><i class="fas fa-5x fa-gift"></i></li>
+            <li><i class="fas fa-5x fa-star"></i></li>
+        </ul>
+        </div>
+        
+    </body>
+</html>
